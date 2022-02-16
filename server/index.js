@@ -1,10 +1,13 @@
 // ROLE: Main page of our back-end
-const path = require('path');
 const express = require('express');
-
 const app = express();
-const PORT = 3000;
+const path = require('path');
+const PORT = 4000;
+const router = require('./router');
 
+
+// ROLE: Routing to router
+app.use('/', router);
 
 // ROLE: Catch-all route handler for any requests to an unknown route
 app.use('*', (req, res) => res.sendStatus(404));
@@ -27,6 +30,6 @@ app.use((err, req, res, next) => {
 // ROLE: server port
 app.listen(PORT, () => {
     console.log(`Server listening on port: ${PORT}`);
-  });
+});
   
 module.exports = app;

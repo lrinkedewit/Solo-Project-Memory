@@ -1,0 +1,14 @@
+{
+    "name": "solo-project-memory",
+    "version": "1.0.0",
+    "description": "A memory game that incorporates adoptable pets API in the neighborhood.",
+    "main": "server/index.js",
+    "scripts": {
+        "start": "node server/index.js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.17.4",
+        "@babel/preset-react": "^7.16.7",
+        "babel-loader": "^8.2.3"
+    }
+}

@@ -13,3 +13,6 @@ Created with `touch` in command line: a `package.json` to keep track of all inst
 **client** - to work with all front-end code using React framework
     1. `App.jsx` to be our outer component
 
+## Installations:
+- babel-loader (npm install --save-dev babel-loader @babel/core)
+- @babel/preset-react (npm install --save-dev @babel/preset-react)

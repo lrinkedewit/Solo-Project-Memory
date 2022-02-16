@@ -34,4 +34,5 @@ Added node modules to gitignore to ensure they are not cached every time we push
 - babel terminal tool (npm install --save-dev @babel/core @babel/cli)
 - babel presets for converting ES2015 + into older JS (npm install --save-dev @babel/preset-env)
 - express ($ npm install express --save)
+- node-fetch (npm install node-fetch)
 

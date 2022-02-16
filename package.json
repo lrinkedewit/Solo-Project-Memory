@@ -4,7 +4,8 @@
     "description": "A memory game that incorporates adoptable pets API in the neighborhood.",
     "main": "server/index.js",
     "scripts": {
-        "start": "node server/index.js"
+        "start": "node server/index.js",
+        "build": "webpack"
     },
     "devDependencies": {
         "@babel/cli": "^7.17.3",
@@ -12,5 +13,8 @@
         "@babel/preset-env": "^7.16.11",
         "@babel/preset-react": "^7.16.7",
         "babel-loader": "^8.2.3"
+    },
+    "dependencies": {
+        "express": "^4.17.2"
     }
 }

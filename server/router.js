@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 // requiring fetch to use in express
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-
+const url = 'https://test1-api.rescuegroups.org/v5/public/animals/breeds';
 // TEST: Get Request --> WORKS
 router.get('/', (req, res) => {
   console.log('entered the router')
-  fetch('https://test1-api.rescuegroups.org/v5/public/animals/patterns/', {
+  fetch(url, {
       method: 'GET',
       headers: {
           'Content-Type': 'application/vnd.api+json',
@@ -14,9 +14,16 @@ router.get('/', (req, res) => {
       },
   })
   .then(console.log(`fetch was successful`))
-  .then((data) => data.json())
-  .then((data) => console.log(data))
-  res.send(data)
+  .then((response) => response.json())
+  .then((response) => {
+    // NOTE: Object Destructuring
+    const { data } = response;
+    res.locals.name = data;
+    console.log(data)
+  })
+  return res
+  .status(200)
+  .json({"data" : {...res.locals.name}})
 });
 
 
